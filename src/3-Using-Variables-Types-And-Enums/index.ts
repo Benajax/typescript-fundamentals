@@ -31,3 +31,5 @@ let pt = ProductType.Sports;
 if (pt === ProductType.Sports) {
   console.log('Found sports product type.');
 }
+
+// BO: const enum will strip off the emitted strings and only use the numeric values associated with the enum strings

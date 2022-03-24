@@ -56,7 +56,8 @@ runTheLearningSamples();
 
 function runTheLearningSamples() {
   // typed parameters
-
+  // BO: function declarations are hoisted to top of page i.e you can call before declaring
+  //     and compiled code will define the functions at the top.
   function displayProductInfo(id: number, name: string) {
     console.log(`${prefix} typed parameters`);
     console.log(`Product id=${id.toString()} and name=${name}`);
@@ -67,7 +68,7 @@ function runTheLearningSamples() {
   // defining functions
 
   // function declaration
-  // hoisted
+  // hoisted - BO: addNumbersDeclaration function will be moved to top of page
   console.log(`${prefix} function declaration`);
   console.log(addNumbersDeclaration(7, 11));
 
@@ -77,7 +78,7 @@ function runTheLearningSamples() {
   }
 
   // function expression (also anonymous)
-  // not hoisted
+  // not hoisted - BO: addNumbersExpression function has to be defined prior to usage
   const addNumbersExpression = function (x: number, y: number): number {
     const sum: number = x + y;
     return sum;
@@ -147,7 +148,7 @@ function runTheLearningSamples() {
 
   // *** async function getProducts()
 
-  // Arrow functions
+  // Arrow functions  <-- BO: they are basically lambdas
 
   // see function displayProducts()
   // and layoutProducts()
@@ -200,7 +201,7 @@ function runTheLearningSamples() {
   function buildAddress(
     street: string,
     city: string,
-    ...restOfAddress: string[]
+    ...restOfAddress: string[]  // BO: rest parameter
   ) {
     const address = `${street}, ${city} ${restOfAddress.join(' ')}`;
     return address;
@@ -217,7 +218,7 @@ function runTheLearningSamples() {
   console.log(`${prefix} Rest parameters`);
   console.log(someAddress);
 
-  // Destructuring parameters
+  // Destructuring parameters  <-- BO: this is the destructured object { id, name }
 
   function displayProduct({ id, name }: ProductType): void {
     console.log(`${prefix} Destructuring parameters`);

@@ -6,6 +6,8 @@ interface HasId {
   id: number;
 }
 
+// BO: extends below is a generaic constrain i.e you are telling ts compiler that
+//     T is type of HasId
 class GenericModel<T extends HasId> {
   public items: T[] | undefined;
   constructor(public url: string) {}
@@ -181,6 +183,7 @@ async function runTheLearningSamples() {
   }
 
   // Partial<T> constraint
+  // BO: enables you to work with a subet of items of a type e.g yoy might not have all the food item properties to work with
   const pear = { name: 'pear' };
   // const pearFood: FoodProduct = pear;
   const pearFood: Partial<FoodProduct> = pear;
