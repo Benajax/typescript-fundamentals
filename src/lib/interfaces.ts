@@ -1,3 +1,4 @@
+// BO: interface has three mandatory properties, one optional property, and one function
 export interface Product {
   id: number;
   name: string;

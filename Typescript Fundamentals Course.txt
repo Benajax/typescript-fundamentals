@@ -1,0 +1,19 @@
+Typescript course
+
+npm commands 						<-- available after intalling node js
+npm init -y							<-- will create the package.json file in app folder of your app
+npm install typescript --save-dev	<-- installs typescript as dev dependency allowing you to compile typescript ( i.e to javascript)
+npm run								<-- npm command to run scripts. script must be specified in the script section of package json. e.g   "scripts": {"tsc": "tsc" } allows to run   npm run tsc
+npm run tsc -- --init				<-- a tsconfig file should appear in the project i.e the config file for typescript
+npm run tsc 						<-- typescript compile command. NB: looks at config file above to determine how to compile.  Emitted files are placed in outDir specified in config file
+npm start                           <-- runs the "start" script. see the script in package.json
+
+
+
+
+https://caniuse.com/  <-- good for determining what is supported on browsers
+Sourcecode: https://github.com/DanWahlin/typescript-fundamentalscd
+The debugger works on the browser cause we have enabled typescript to create our source maps in tsconfig. that's what enables us to debug type scriptcodee in the browser.
+Remember that the browser ionly understands javascript. Try to avoid tye "any" in typescript as much as possible cause it undermines the purpose of types in typescript
+https://www.typescriptlang.org/  <-- play with typescript here
+Some TS built-in constraints:  Readonly, Partial
